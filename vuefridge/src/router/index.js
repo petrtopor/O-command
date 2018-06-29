@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import Calendar from '@/components/Calendar'
-import Cart from '@/components/Cart'
+import Products from '@/components/Products'
 import Book from '@/components/Book'
 import Qrcode from '@/components/Qrcode'
 
@@ -16,22 +16,22 @@ export default new Router({
       component: Home
     },
     {
-      path: '/calendar',
+      path: '/calendar/',
       name: 'Calendar',
       component: Calendar
     },
     {
-      path: '/cart',
-      name: 'Cart',
-      component: Cart
+      path: '/products/',
+      name: 'Products',
+      component: Products
     },
     {
-      path: '/book',
+      path: '/book/',
       name: 'Book',
       component: Book
     },
     {
-      path: '/qrcode',
+      path: '/qrcode/',
       name: 'Qrcode',
       component: Qrcode
     }
