@@ -20,7 +20,7 @@
 								</div>
 							</div>
 						</div>
-						<div md-flex="4" sm-flex="6">
+						<div class="product-wrapper" md-flex="4" sm-flex="6">
 							<div class="product expired">
 								<div class="info" xs-flex="9">
 									<h4 class="title">Название продукта</h4>
