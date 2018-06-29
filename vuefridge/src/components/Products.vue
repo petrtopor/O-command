@@ -6,10 +6,12 @@
 						<a href="" class="btn1 addproduct"><i class="fo plus"></i><span>Добавить продукты</span></a>
 					</div>
 					<div class="product-list flex flex-row">
+						
+						
 						<div class="product-wrapper" md-flex="4" sm-flex="6">
 							<div class="product expired"> <!-- Классы: epxired, expires-soon -->
 								<div class="info" xs-flex="9">
-									<h4 class="title">Название продукта</h4>
+									<h4 class="title" :>Название продукта</h4>
 									<div class="quantity"><span class="amount">15,8</span><span class="measure">кг</span></div>
 									<div class="expiration"><i class="fo clock"></i><span class="date">10 июля 2018</span></div>
 								</div>
@@ -19,6 +21,9 @@
 								</div>
 							</div>
 						</div>
+						
+						
+						
 						<div md-flex="4" sm-flex="6">
 							<div class="product expired">
 								<div class="info" xs-flex="9">
@@ -60,14 +65,29 @@
 						</div>
 					</div>
 				</div>
+				
 			</section>
 
 </template>
 
 <script>
-	export default {
-	  name: 'Products'
+
+import firebase from 'firebase'
+
+export default {
+	name: 'Products',
+
+	mounted() {
+		const qwe = firebase.database.refs('products');
+		qwe.once('value').then(this.GetName).catch((error) => console.log(error));
+	},
+
+	methods: {
+		GetName: function(snapshot){
+			console.log(snapshot.val());
+		}
 	}
+}
 </script>
 
 <style src="../assets/style.css">
